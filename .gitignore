@@ -1,0 +1,6 @@
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+upload.zip
