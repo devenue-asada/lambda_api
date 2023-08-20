@@ -1,3 +1,5 @@
+rm upload.zip
+
 cd modules
 
 zip -r ../upload.zip .

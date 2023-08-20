@@ -9,14 +9,17 @@ DB = os.environ['DB']
 
 print("1>>>>>>>>>>>>>>>>>>>>>>>>>>")
 print(HOST)
+print(USER)
+print(PASSWORD)
+print(DB)
 
 connection = pymysql.connect(
     host=HOST,
     user=USER,
     password=PASSWORD,
-    database=DB,
-    charset='utf8mb4',
-    cursorclass=pymysql.cursors.DictCursor)
+    database=DB
+)
+
 print("2>>>>>>>>>>>>>>>>>>>>>>>>>>")
 cursor = connection.cursor()
 
