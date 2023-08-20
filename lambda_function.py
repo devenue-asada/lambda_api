@@ -7,7 +7,6 @@ USER = os.environ['USER']
 PASSWORD = os.environ['PASSWORD']
 DB = os.environ['DB']
 
-print("1>>>>>>>>>>>>>>>>>>>>>>>>>>")
 print(HOST)
 print(USER)
 print(PASSWORD)
@@ -20,16 +19,11 @@ connection = pymysql.connect(
     database=DB
 )
 
-print("2>>>>>>>>>>>>>>>>>>>>>>>>>>")
 cursor = connection.cursor()
 
-print("3>>>>>>>>>>>>>>>>>>>>>>>>>>")
-
 def lambda_handler(event, context):
-    print("3>>>>>>>>>>>>>>>>>>>>>>>>>>")
     users = []
     with connection.cursor() as cursor:
-        print("4>>>>>>>>>>>>>>>>>>>>>>>>>>")
         sql = f'''
             SELECT
                 *
@@ -38,5 +32,4 @@ def lambda_handler(event, context):
             '''
         cursor.execute(sql)
         users = cursor.fetchall()
-    print("5>>>>>>>>>>>>>>>>>>>>>>>>>>")
     return {'users': users}
